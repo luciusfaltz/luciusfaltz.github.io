@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Desafio n°1 RocketSeat</title>
+	<meta charset="UTF-8">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+</head>
+<style>
+	body{
+		margin: 40px;
+		font-family: 'Raleway', sans-serif; 
+		color: black;
+	}
+	h1, h2{
+		color:#5900b3;
+	}
+	h3{
+		color: white;
+	}
+	.tres{
+		overflow:auto;
+	}	
+	footer{
+		background-color: #5900b3; 
+	}
+
+</style>
+<body>
+  	<h1>Desafio n°1 Rocketseat</h1>
+  	<footer>
+  	<h3>Nome: Lucius Faltz Lassarote da Silva</h3>
+    </footer>
+
+  	<h2>Exercício 1</h2>
+  	<p id="texto"></p>
+
+  	<h2>Exercício 2</h2>
+
+  	<p class="tres" id="result2"></p>
+
+
+  	<h2>Exercício 3</h2>
+  	<p id="result3"></p>
+
+   	<h2>Exercício 4</h2>
+  	<p id="result4"></p>
+
+  	<h2>Exercício 5</h2>
+
+
+</body>
+	<script type="text/javascript">
+		/* Exercício 1 */
+		var endereco = {
+			rua: "Rua dos Pinheiros",
+			numero: 1293,
+			bairro: "Centro",
+			cidade: "São Paulo",
+			uf: "SP"
+		};
+		var resultado = "O usuário mora em ";
+		resultado += endereco.cidade;
+		resultado += " / ";
+		resultado += endereco.uf;
+		resultado +=", no bairro ";
+		resultado += endereco.bairro;
+		resultado +=", na ";
+		resultado += endereco.rua;
+		resultado += " com n° ";
+		resultado += endereco.numero;
+		resultado +=".";
+		document.getElementById("texto").innerHTML = resultado;
+
+		/* Exercício 2 */
+		function pares(x, y){
+			var pares = [];
+			for (i=x; i<=y; i++){
+				if(i%2 == 0)
+					pares.push(i);
+			}
+			return pares.toString();
+		}
+		var result2 = pares(32, 321);
+		var resultado = result2.split(". ");
+		document.getElementById("result2").innerHTML = resultado;
+
+		/* Exercício 3 */
+		function temhabilidades(skills){
+
+			if(skills.indexOf("Javascript") >= 0)
+				return true;
+			else
+				return false;
+
+		}
+		var skills = ["Javascript", "ReactJs", "React Native"];
+		var result3 = "Resultado = "+temhabilidades(skills)+ ".";
+		document.getElementById("result3").innerHTML = result3;
+
+		/* Exercício 4 */
+		var xp = ["Iniciante", "Intermediário", "Avançado", "Jedi Master"];
+		function experiencia(anos){
+			if(anos == 0 || anos ==1)
+				return xp[0];
+			else
+				if(anos > 1 && anos <=3)
+					return xp[1];
+				else
+					if(anos > 3 && anos <=6)
+						return xp[2];
+					else
+						return xp[3];
+		}
+		var anosEstudo = 7;
+		var result4 = experiencia(anosEstudo);
+		document.getElementById("result4").innerHTML = result4;
+
+		/* Exercício 5 */
+		var usuarios = [
+			{
+				nome: "Diego",
+				habilidades: ["Javascript", "ReactJS", "Redux"]
+			},
+			{
+				nome: "Gabriel",
+				habilidades: ["VueJS", "Ruby on Rails", "Eilixir" ]
+			}
+		];
+		
+			for(let usuario of usuarios){
+				document.write("O "+usuario.nome + " possui as habilidades " +usuario.habilidades.join(", ")+ '<br>' );
+			}
+
+	</script>
+</html>
