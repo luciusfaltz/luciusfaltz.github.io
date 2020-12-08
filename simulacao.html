@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+	<title>Estequeometria</title>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+
+</head>
+<body>
+	<h1>Trabalho de Química integrado à Programação Clientes Web</h1>
+
+	<h2>Simulação 01</h2>
+	<p>Transformações entre número de mol e massa(g).</p>
+	<p>Elemento utilizado: Enxofre (S).</p> 
+	<p>Insira o valor e depois selecione se você quer transformar de grama para mol ou de mol para grama. </p>
+	<input type="number" name="valor" id="valor">
+	<button onclick="molparagrama();">MOL para Grama</button>
+	<button onclick="gramaparamol();">Grama para MOL</button>
+	<p id=formula></p>
+	<p id=conta></p>
+	<p id=resul></p>
+	<p id=resultado></p>
+
+	<h2>Simulação 02</h2>
+	<p>Relações diretas em uma reação química</p>
+
+
+	<h2>Simulação 03</h2>
+	<p>Reações com reagente limitante</p>
+
+<script type="text/javascript">
+	function molparagrama (){
+
+		var mol = document.querySelector('body input').value;	
+		var molar = parseFloat(32);
+		var grama = mol*molar;
+		var form = "Fórmula: Massa(g) = Mol x Massa Molar  -- Massa Molar do Enxofre: 32";
+		var conta = "Conta: Massa(g) = "+mol+" x "+molar;
+		var res = "Resultado: Massa(g) = "+grama;
+		var result = mol+" mol(s) de Enxofre equivale(m) a "+grama+"grama(s).";
+
+
+		document.getElementById("formula").innerHTML = form;
+		document.getElementById("conta").innerHTML = conta;
+		document.getElementById("resul").innerHTML = res;
+		document.getElementById("resultado").innerHTML = result;
+	}
+	function gramaparamol (){
+		var grama = document.querySelector('body input').value;	
+		var molar = parseFloat(32);
+		var mol = grama/molar;
+		var form = "Fórmula: Mol = Massa(g) / Massa Molar  -- Massa Molar do Enxofre: 32";
+		var conta = "Conta: Mol = "+grama+" / "+molar;
+		var res = "Resultado: Mol = "+mol;
+		var result = grama+" grama(s) de Enxofre equivale(m) a "+mol+"mol(s).";
+
+		document.getElementById("formula").innerHTML = form;
+		document.getElementById("conta").innerHTML = conta;
+		document.getElementById("resul").innerHTML = res;
+		document.getElementById("resultado").innerHTML = result;
+	}
+
+</script>
+		
+		<a href="./quimica.html">Voltar</a>
+</body>
