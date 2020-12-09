@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Desafio n°2 RocketSeat</title>
+	<meta charset="UTF-8">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+</head>
+<style>
+	body{
+		margin: 40px;
+		font-family: 'Raleway', sans-serif; 
+		color: black;
+	}
+	h1, h2, a{
+		color:#5900b3;
+	}
+	h3{
+		color: white;
+		background-color: #5900b3; 
+	}	
+
+</style>
+<body>
+  	<h1>Desafio n°2 Rocketseat</h1>
+  	<h3>Nome: Lucius Faltz Lassarote da Silva</h3>
+    
+    <div id="exercicio01">
+  		<h2>Exercício 1</h2>
+  		<button onclick="quadrado1()">Crie um quadrado!</button>
+  	</div>
+  	<div id="exercicio02">
+  		<h2>Exercício 2</h2>
+  		<button onclick="quadrado2()">Crie um quadrado!</button>
+    </div>
+    <div id="exercicio03">
+  		<h2>Exercício 3</h2>
+    </div>
+  	<div id="exercicio04">
+   		<h2>Exercício 4</h2>
+    </div>
+    	<input type="text" name="nome" id="nomee">
+		<button onclick="adicionar()">Adicionar</button>
+		<br><br><br>
+		<a href="./java.html">Voltar</a>
+</body>
+	<script type="text/javascript">
+		function quadrado1(){
+			var quadrado1 = document.createElement("div");
+			quadrado1.style = 'background-color: red; height: 100px; width: 100px; margin: 2px';
+			document.getElementById("exercicio01").appendChild(quadrado1);
+
+		}
+		function quadrado2(){
+			var quadrado2 = document.createElement("div");
+			quadrado2.style = 'background-color: red; height: 100px; width: 100px; margin: 2px';
+			document.getElementById("exercicio02").appendChild(quadrado2);
+			quadrado2.onmouseover = function fundocor(){
+				quadrado2.style.backgroundColor = getRandomColor();
+			}
+		}
+		function getRandomColor() {
+			 var letters = "0123456789ABCDEF";
+			 var color = "#";
+			 for (var i = 0; i < 6; i++) {
+			 color += letters[Math.floor(Math.random() * 16)];
+			 }
+			 return color;
+			}
+
+		//EXERCÍCIO 3//
+		var nomes = ["Diego", "Gabriel", "Lucas"];
+		var lista = document.createElement("ul");
+
+		function crialista (){
+			var lista = document.createElement("ul");
+			var iden = document.createAttribute("id"); 
+	    	iden.value = "lista3";                           
+	    	lista.setAttributeNode(iden); 
+			document.getElementById("exercicio03").appendChild(lista);
+			for( nome of nomes){
+				var nomeElement = document.createElement("li");
+				nometxt = document.createTextNode(nome)
+				nomeElement.appendChild(nometxt)
+				document.getElementById("lista3").appendChild(nomeElement);
+			}
+		} 
+
+		crialista(nomes);
+		//EXERCÍCIO 4//
+		function crialista4 (){
+			var lista = document.createElement("ul");
+			var iden = document.createAttribute("id"); 
+	    	iden.value = "lista4";                           
+	    	lista.setAttributeNode(iden); 
+			document.getElementById("exercicio04").appendChild(lista);
+			for( nome of nomes){
+				var nomeElement = document.createElement("li");
+				nometxt = document.createTextNode(nome)
+				nomeElement.appendChild(nometxt)
+				document.getElementById("lista4").appendChild(nomeElement);
+			}
+		} 
+		crialista4();
+		function adicionar(){
+			
+			var novonome = document.getElementById("nomee").value;
+			nomes.push(novonome);
+			document.getElementById("nomee").value = '';
+			document.getElementById("exercicio04").appendChild(lista);
+			document.getElementById("lista4").innerHTML = "";
+			var qtd = nomes.length;
+			for(var i = 0; i<qtd; i++){
+				var nome = document.createElement("li");
+				nome.innerText = nomes[i];
+				document.getElementById("lista4").appendChild(nome);	//coloquei os nomes nessa lista nova
+			}
+		}
+
+	</script>
+</html>
