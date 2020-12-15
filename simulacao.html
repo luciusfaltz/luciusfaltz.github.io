@@ -23,10 +23,42 @@
 
 	<h2>Simulação 02</h2>
 	<p>Relações diretas em uma reação química</p>
+	<p>Insira o valor em Mol de H2 ou Mol de H2O e depois selecione correlação desejada. </p>
+	<input type="number" name="valor" id="item2">
+	<button onclick="reacaoh2();">Mol(s) de H2 forma(m) quantos Mol(s) de H2O?</button>
+	<button onclick="reacaoh2o();">Mol(s)de H2O é(são) formado(s) a partir de quantos Mol(s) de H2?</button>
+	<p id="formula2"></p>
+	<p id="conta2"></p>
+	<p id="resul2"></p>
+	<p id="resultado2"></p>
+
+
+	<p>Insira o valor em Mol de O2 ou Mol de H2O e depois selecione correlação desejada. </p>
+	<input type="number" name="valor" id="item2-1">
+	<button onclick="reacaoo2();">Mol(s) de O2 forma(m) quantos Mol(s) de H2O?</button>
+	<button onclick="reacaoH2o();">Mol(s)de H2O é(são) formado(s) a partir de quantos Mol(s) de O2?</button>
+	<p id="formula2-1"></p>
+	<p id="conta2-1"></p>
+	<p id="resul2-1"></p>
+	<p id="resultado2-1"></p>
 
 
 	<h2>Simulação 03</h2>
 	<p>Reações com reagente limitante</p>
+	<p>Insira no primeiro campo o valor em mol(s) de H2 e no segundo o valor em mol(s) de O2 para descobrir qual é o reagente limitante, qual é o excedente e o produto final da correlação de formação de H2O.</p>
+	<input type="number" name="valor" id="hidrogenio">
+	<input type="number" name="valor" id="oxigenio">
+	<button onclick="limitante();">Qual é o reagente limitante e o excedente?</button>
+	<p id="formula3"></p>
+	<p id="conta3"></p>
+	<p id="resul3"></p>
+	<p id="resultado3"></p>
+	<p id="formula3-1"></p>
+	<p id="conta3-1"></p>
+	<p id="resul3-1"></p>
+	<p id="resultado3-1"></p>
+	<p id ="textofinal"></p>
+	<p id ="produtofinal"></p> 
 
 <script type="text/javascript">
 	function molparagrama (){
@@ -58,6 +90,120 @@
 		document.getElementById("conta").innerHTML = conta;
 		document.getElementById("resul").innerHTML = res;
 		document.getElementById("resultado").innerHTML = result;
+	}
+	function reacaoh2 (){
+		var mol1h2 = parseFloat(1);
+		var mol1h2o = parseFloat(1);
+		var molh2 = document.getElementById("item2").value;
+		var molh2o = (molh2 * mol1h2o)/mol1h2;
+
+		var form2 = "Se 1 Mol de H2 forma 1 Mol de H2O,<br>1 Mol H2 ---> 1 Mol de H2O<br>"+molh2+" Mol H2 ---> X Mol H2O";
+		var conta2 = "X Mol H2O = ("+mol1h2o+" x "+molh2+") /"+mol1h2;
+		var res2 = "Resultado: X Mol H2O= "+molh2o;
+		var result2 = molh2+" Mol(s) de H2 forma(m) "+molh2o+" Mol(s) de H2O";
+
+		document.getElementById("formula2").innerHTML = form2;
+		document.getElementById("conta2").innerHTML = conta2;
+		document.getElementById("resul2").innerHTML = res2;
+		document.getElementById("resultado2").innerHTML = result2;
+	}
+
+	function reacaoh2o (){
+		var mol1h2 = parseFloat(1);
+		var mol1h2o = parseFloat(1);
+		var molh2o = document.getElementById("item2").value;
+		var molh2 = (molh2o * mol1h2)/mol1h2o;
+
+		var form2 = "Se 1 Mol de H2O necessita de 1 Mol de H2 para ser formado,<br>1 Mol H2O ---> 1 Mol de H2<br>"+molh2o+" Mol(s) H2O ---> X Mol(s) H2";
+		var conta2 = "X Mol(s) H2 = ("+mol1h2+" x "+molh2o+") /"+mol1h2o;
+		var res2 = "Resultado: X Mol(s) H2= "+molh2;
+		var result2 = molh2o+" Mol(s) de H2O é(são) formados a partir de "+molh2+" Mol(s) de H2";
+
+		document.getElementById("formula2").innerHTML = form2;
+		document.getElementById("conta2").innerHTML = conta2;
+		document.getElementById("resul2").innerHTML = res2;
+		document.getElementById("resultado2").innerHTML = result2;
+	}
+
+	function reacaoo2 (){
+		var mol1o2 = parseFloat(0.5);
+		var mol1h2o = parseFloat(1);
+		var molo2 = document.getElementById("item2-1").value;
+		var molh2o = (molo2 * mol1h2o)/mol1o2;
+
+		var form2 = "Se 0,5 Mol de O2 forma 1 Mol de H2O,<br>0,5 Mol O2 ---> 1 Mol de H2O<br>"+molo2+" Mol O2 ---> X Mol H2O";
+		var conta2 = "X Mol H2O = ("+mol1h2o+" x "+molo2+") /"+mol1o2;
+		var res2 = "Resultado: X Mol H2O= "+molh2o;
+		var result2 = molo2+" Mol(s) de O2 forma(m) "+molh2o+" Mol(s) de H2O";
+
+		document.getElementById("formula2-1").innerHTML = form2;
+		document.getElementById("conta2-1").innerHTML = conta2;
+		document.getElementById("resul2-1").innerHTML = res2;
+		document.getElementById("resultado2-1").innerHTML = result2;
+	}
+
+	function reacaoH2o(){
+		var mol1o2 = parseFloat(0.5);
+		var mol1h2o = parseFloat(1);
+		var molh2o = document.getElementById("item2-1").value;
+		var molo2 = (molh2o * mol1o2)/mol1h2o;
+
+		var form2 = "Se 1 Mol de H2O necessita de 0,5 Mol de O2 para ser formado,<br>1 Mol H2O ---> 0,5 Mol de O2<br>"+molh2o+" Mol(s) H2O ---> X Mol(s) O2";
+		var conta2 = "X Mol O2 = ("+molh2o+" x "+mol1o2+") /"+mol1h2o;
+		var res2 = "Resultado: X Mol O2= "+molo2;
+		var result2 = molh2o+" Mol(s) de H2O é(são) formados a partir de "+molo2+" Mol(s) de O2";
+
+		document.getElementById("formula2-1").innerHTML = form2;
+		document.getElementById("conta2-1").innerHTML = conta2;
+		document.getElementById("resul2-1").innerHTML = res2;
+		document.getElementById("resultado2-1").innerHTML = result2;
+	}
+
+	function limitante (){
+		var molO2 = document.getElementById("oxigenio").value;
+		var molH2 = document.getElementById("hidrogenio").value;
+		var mol1H2O = parseFloat(1);
+		var mol1H2 = parseFloat(1);
+		var mol1O2 = parseFloat(0.5);
+
+		var h2oeh2 = (molH2*mol1H2O)/mol1H2;
+		var form3 = "Se 1 Mol de H2 forma 1 Mol de H2O,<br>1 Mol H2 ---> 1 Mol de H2O<br>"+molH2+" Mol H2 ---> X Mol H2O";
+		var conta3 = "X Mol H2O = ("+mol1H2O+" x "+molH2+") /"+mol1H2;
+		var res3 = "Resultado: X Mol H2O= "+h2oeh2;
+		var result3 = molH2+" Mol(s) de H2 forma(m) "+h2oeh2+" Mol(s) de H2O";
+		document.getElementById("formula3").innerHTML = form3;
+		document.getElementById("conta3").innerHTML = conta3;
+		document.getElementById("resul3").innerHTML = res3;
+		document.getElementById("resultado3").innerHTML = result3;
+
+		var h2oeo2 = (molO2*mol1H2O)/mol1O2;
+		var form31 = "Se 0,5 Mol de O2 forma 1 Mol de H2O,<br>0,5 Mol O2 ---> 1 Mol de H2O<br>"+molO2+" Mol O2 ---> X Mol H2O";
+		var conta31 = "X Mol H2O = ("+mol1H2O+" x "+molO2+") /"+mol1O2;
+		var res31 = "Resultado: X Mol H2O= "+h2oeo2;
+		var result31 = molO2+" Mol(s) de O2 forma(m) "+h2oeo2+" Mol(s) de H2O";
+		document.getElementById("formula3-1").innerHTML = form31;
+		document.getElementById("conta3-1").innerHTML = conta31;
+		document.getElementById("resul3-1").innerHTML = res31;
+		document.getElementById("resultado3-1").innerHTML = result31;
+
+		if( h2oeh2 > h2oeo2 ){
+			var limitanteexcedente = "O reagente limitante nessa correlação é o Oxigênio, enquanto o reagente excedente é o Hidrogênio.";
+			document.getElementById("textofinal").innerHTML = limitanteexcedente;
+			var produto = h2oeo2;
+		}
+		else if( h2oeh2 < h2oeo2 ){
+			var limitanteexcedente = "O reagente limitante nessa correlação é o Hidrogênio, enquanto o reagente excedente é o Oxigênio.";
+			document.getElementById("textofinal").innerHTML = limitanteexcedente;
+			var produto = h2oeh2;
+		}
+		else{
+			var sem = "Não há reagente limtante e nem excedente.";
+			document.getElementById("textofinal").innerHTML = sem;
+			var produto = h2oeo2;
+		}
+		var produtofinal = "Nesse caso, o produto final é igual a "+produto+" Mol(s) de H2O";
+		document.getElementById("produtofinal").innerHTML = produtofinal;
+
 	}
 
 </script>
