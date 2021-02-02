@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(function () {
+			var glossario = [{
+				"id": 1,
+				"termo": "W3C",
+				"definicao": "World Wide Web Consortium – escritório responsável por desenvolver normas técnicas para a Internet",
+				"autor": "José Borges", 
+				"dataCriacao": "01/04/2015"
+			},
+			{
+				"id": 2,
+				"termo": "HTML",
+				"definicao": "HyperText Markup Language – linguagem de marcação utilizada para estruturar páginas web", 
+				"autor": "Pedro Silva", 
+				"dataCriacao": "12/05/2015"
+			},
+			{
+				"id": 3,
+				"termo": "CSS",
+				"definicao": "Cascade Style Sheet – Folhas de estilo utilizadas para configurar a visualização de  páginas web.",
+				"autor": "Luciana Mendes", 
+				"dataCriacao": "06/11/2017"
+			}
+			];
+
+			$(glossario).each(function (idx, termos) { 
+				let titulo = termos.termo;
+				$("#termos")
+					.append(
+						$("<li>")
+							.text(titulo).attr("value", idx)
+					)
+
+				$("#termos").on("click", "li", function () {
+					let id = $(this).val();
+					$("#titulo").text("Definição");
+					$("#termo").text(glossario[id].termo);
+					$("#definicao").text(glossario[id].definicao);
+					$("#autor").text(glossario[id].autor);
+					$("#dataCriacao").text(glossario[id].dataCriacao);
+
+				})
+
+
+			})
+
+		});
+
+	</script>
+</head>
+<style>
+	li{
+		cursor: pointer;
+	}
+	.linha{
+		padding-right: 3px;
+		border-right: 1px solid black;
+		margin-left: 5px;
+		margin-right: 10px;
+	}
+	section, .linha{
+		display: inline-block;
+	}
+	div{
+		border-bottom: 1px solid black;
+		padding-bottom: 4px;
+	}
+
+</style>
+<body>
+	<div>
+		<h1>Dicionário Online</h1>
+
+	</div>
+	<section class="linha">
+	<h1>Termos cadastrados</h1>
+	<p> Clique nos termos que você deseja conhecer!</p>
+	<ul id="termos"></ul>
+	</section>
+	<section>
+		<h1 id="titulo"></h1>
+		<p id=termo></p>
+		<p id=definicao></p>
+		<p id=autor></p>
+		<p id=dataCriacao></p>
+	</section>
+	<br><br><br><br>
+	<a href="./java.html">Voltar</a>
+
+</body>
+
+</html>

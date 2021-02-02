@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(function(){ 
+		function Livro (titulo, descricao, genero, autor){
+			this.titulo = titulo;
+			this.descricao  = descricao;
+			this.genero = genero;
+			this.autor = autor;
+
+		}
+			let acervoArray = new Array();
+			$("#add_acervo").click(function(){
+
+				let tituloLivro =$("#titulo").val();
+				let descrLivro =$("#descricao").val();
+				let generoLivro =$("#genero").val();
+				let autorLivro =$("#autor").val();
+
+				let livro = new Livro(tituloLivro, descrLivro, generoLivro, autorLivro);
+				acervoArray.push(livro);
+				$("input[name='acervo_post']").val(JSON.stringify(acervoArray));
+				
+
+				$("#acervo")
+					.append(
+						$("<tr>")
+							.append(
+								$("<td>")
+									.text(tituloLivro)
+								)
+							.append(
+								$("<td>")
+									.text(descrLivro)
+							)
+							.append(
+								$("<td>")
+									.text(generoLivro)
+							)
+							.append(
+								$("<td>")
+									.text(autorLivro)
+							)
+							.append(
+								$("<td>")
+									.append($("<img>").attr('src', 'lixeira.png'))
+								)
+					);
+
+			})
+
+			$("#acervo").on("click","img", function(){
+				$(this).parents("#acervo tr").remove();
+			})
+
+			$("#titulo").val("");
+			$("#descricao").val("");
+			$("#autor").val("");
+
+		
+		})
+
+
+
+		
+		
+	</script>
+</head>
+<style type="text/css">
+	html{
+	font-family: 'Raleway', sans-serif; 
+	}
+	body{
+		margin: 40px;
+		font-family: 'Raleway', sans-serif; 
+		color: black;
+	}
+	h1, h2, a{
+		color:#5900b3;
+		font-family: 'Raleway', sans-serif;
+	}
+	
+	p{
+		font-family: 'Raleway', sans-serif;
+	}
+	
+	img{
+		width: 15px;
+		height: 15px;
+	}
+	input, textarea, select{
+		margin: 5px;
+	}
+	table, th, td {
+  		border: 1px solid black;
+  		border-collapse: collapse;
+  		margin: 5px;
+	}
+
+	th, td{
+		padding: 5px;
+	}
+	button, input{
+		font-family: 'Raleway', sans-serif;
+	}
+</style>
+<body>
+
+<fieldset>
+	<legend>Cadastro de livros</legend>
+	<input type="text" id="titulo" placeholder="Titulo"><br>
+	<textarea id="descricao" placeholder="Descrição"></textarea> <br>
+	<select id="genero" name="genero" placeholder="Genero">
+		<option value="Romance">Romance</option>
+		<option value="Drama">Drama</option>
+		<option value="Terror">Terror</option>
+		<option value="Ficção">Ficção</option>
+		<option value="Técnico">Técnico</option>
+	</select>
+	<br>
+	<input type="text" id="autor" placeholder="Autor">
+	<br>
+	<button id="add_acervo">Adicionar a lista</button>
+</fieldset>
+
+<h1>Catálogo</h1>
+
+	<table id="acervo">
+		<tr>
+			<th>Título</th>
+			<th>Descrição</th>
+			<th>Gênero</th>
+			<th>Autor</th><th></th></tr>
+	</table>
+
+
+	<form action="https://rafaelescalfoni.net/web/livros.php" 
+		method="post">
+		<input type="hidden" name="acervo_post">
+		<input type="submit" value="Salvar no BD">
+	</form>
+	
+	<a href="./java.html">Voltar</a>
+</body>
+</html>
