@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Laboratório de jQuery 2</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link href="estilo.css" rel="stylesheet">
+	<script>
+		//EXERCÍCIO 1
+		$(function(){
+			$("#botao1").click(function(){
+			let frase1 = $("#frase1").val();
+			let qtd = frase1.length;
+			let invertFrase1 = new Array();
+			for (let i = 0; i < qtd; i++) {
+				  invertFrase1[i] = frase1[qtd-i-1];
+			}
+			$("#a").text("Frase normal:");
+			$("#normal1").text(frase);
+			$("#b").text("Frase invertida:");
+			$("#invertida1").text(invertFrase.join(""));
+			}
+		)}
+			);
+		//EXERCÍCIO 2
+		$(function(){
+			$("#botao2").click(function(){
+				let frase2 = $("#frase2").val();
+				let qtd2 = frase2.length;
+				let novaFrase = "";
+				for (let i = 0; i < qtd2; i++) {
+					if(frase2[i] == 'a' || frase2[i] == 'A' || frase2[i] == 'e' || frase2[i] == 'E' || frase2[i] == 'i' || frase2[i] == 'I' || frase2[i] == 'o' || frase2[i] == 'O' || frase2[i] == 'u' || frase2[i] == 'U'){
+						novaFrase = novaFrase +"<strong>" + frase2[i] + "</strong>";
+					}
+					else
+						novaFrase = novaFrase + frase2[i];
+
+					
+				}
+				$("#fras2").html(novaFrase);
+			}) 
+
+
+		}); 
+
+		//EXERCÍCIO 3
+		$(function(){
+			$("#botao3").click(function(){
+				let texto3 = $("#frase3").val();
+				qtd3 = texto3.length;
+				let array = new Array();
+				let j = 0;
+				
+                for (let i = 0; i < qtd3; i++) {
+				if(texto3[i] == " "){
+					j++;
+				}
+				else if(array[j] == undefined){
+					array[j] = texto3[i];
+				}
+				else{
+					array[j] = array[j]+texto3[i];
+				}
+				}
+			
+			console.log(array);
+
+			let qtd31 = array.length;
+			let cont = 0; 
+			let contagem = new Array();
+			for (let k = 0; k < qtd31; k++) {
+				cont = 0;
+				for(let l = 0; l < qtd31; l++){
+					if(array[k] == array[l]){
+					cont++;
+					}
+				}
+				contagem[k] = cont;
+
+			}
+
+				$("#tabela")
+							.append(
+								$("<th>")
+									.text("Palavras")
+								)
+							.append(
+								$("<th>")
+									.text("Ocorrências")
+							)
+							
+
+						for (var m = 0; m < qtd31; m++) {
+							$("#tabela")
+								.append(
+									$("<tr>")
+										.append(
+										$("<td>")
+											.text(array[m])
+											)
+												.append(
+												$("<td>")
+													.text(contagem[m])
+													)
+						);}
+
+			})
+			}) ;
+
+		//EXERCÍCIO 4
+		$(function(){
+			$("#botao4").click(function(){
+				let texto4 = $("#frase4").val();
+				qtd4 = texto4.length;
+				let array = new Array();
+				let j = 0;
+				
+                for (let i = 0; i < qtd4; i++) {
+				if(texto4[i] == " "){
+					j++;
+				}
+				else if(array[j] == undefined){
+					array[j] = texto4[i];
+				}
+				else{
+					array[j] = array[j]+texto4[i];
+				}
+				}
+			
+
+			let qtd41 = array.length;
+			let cont = 0; 
+			let contagem = new Array();
+			for (let k = 0; k < qtd41; k++) {
+				cont = 0;
+				for(let l = 0; l < qtd41; l++){
+					if(array[k] == array[l]){
+					cont++;
+					}
+				}
+				contagem[k] = cont;
+
+			}
+			let qtdcont = contagem.length;
+			let maiorPalavra = 0;
+			for(let m = 0; m < qtdcont; m++){
+					if(contagem[maiorPalavra] < contagem[m]){
+						maiorPalavra = m;
+					}
+				}
+			$("#fras4").text("Palavra com maior ocorrência: "+array[maiorPalavra]);
+			$("#fras41").text("Ocorrência: "+contagem[maiorPalavra]+" vezes.");;
+
+		})
+		});
+
+		//EXERCÍCIO 5
+				$(function(){
+			$("#botao5").click(function(){
+				let texto5 = $("#frase5").val();
+				qtd5 = texto5.length;
+				var array5 = new Array();
+				let j = 0;
+				
+                for (let i = 0; i < qtd5; i++) {
+				if(texto5[i] == " "){
+					j++;
+				}
+				else if(array5[j] == undefined){
+					array5[j] = texto5[i];
+				}
+				else{
+					array5[j] = array5[j]+texto5[i];
+				}
+				}
+			
+			$("#normal5").text("Texto original:");
+			$("#texto5").text(texto5);
+
+			$("#botao51").click(function(){
+				let procura = $("#proc5").val();
+				let substitui = $("#subs5").val();
+				
+				let qtd51 = array5.length;
+				for (var i = 0; i < qtd51; i++) {
+					if(procura == array5[i]){
+						array5[i] = substitui;
+					}
+				}
+				$("#substituido").text("Texto com a palavra "+procura+" substituída pela palavra "+substitui+":");
+				$("#texto51").text(array5.join(" "));
+			})
+		})
+		});
+
+		//EXERCÍCIO 6
+		$(function () {
+            $("#botao6").click(function () {
+                let data6 = $("#data6").val();
+                if (data6 != "") {
+                    let dia = data6.substr(8, 2);
+                    let ano = data6.substr(0, 4);
+                    let mes = data6.substr(5, 2);
+                    const atual = new Date();
+                    const nascimento = new Date(ano, mes - 1, dia);
+                    const diferencaDias = Math.abs(atual.getTime() - nascimento.getTime());
+                    const diasVida = Math.ceil(diferencaDias / (1000 * 60 * 60 * 24));
+                    $("#fras6").text(" Quem nasceu no dia: " + dia + "/" + mes + "/" + ano + " possui " + diasVida + " dias de vida");
+                }
+            })
+        });
+
+
+		//EXERCÍCIO 7
+		$(function(){
+			$("#botao7").click(function(){
+				let data7 = new Array();
+				data7 = $("#data7").val();
+				let ano = data7[0] + data7[1] + data7[2] + data7[3];
+				let mes = data7[5] + data7[6];
+				let dia = data7[8] + data7[9];
+				let nomeses = new Array("janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro");
+				$("#fras7").text(dia+" de "+nomeses[mes-1]+" de "+ano);
+
+				let dataa = new Date();
+				console.log(dataa);
+			})
+
+		});
+
+		//EXERCÍCIO 8
+		$(function(){
+			$("#botao8").click(function(){
+				let dataMenor = new Array();
+				let dataMaior = new Array();
+				dataMenor = $("#dataMenor").val();
+				dataMaior = $("#dataMaior").val();
+				let anoMaior = dataMaior[0] + dataMaior[1] + dataMaior[2] + dataMaior[3];
+				let mesMaior = dataMaior[5] + dataMaior[6];
+				let diaMaior = dataMaior[8] + dataMaior[9];
+				let anoMenor = dataMenor[0] + dataMenor[1] + dataMenor[2] + dataMenor[3];
+				let mesMenor = dataMenor[5] + dataMenor[6];
+				let diaMenor = dataMenor[8] + dataMenor[9];
+
+				let semanas = (anoMaior - anoMenor)*52;
+				semanas = semanas + ((mesMaior - mesMenor)*4);
+				semanas = semanas + ((diaMaior - diaMenor)/7);
+				$("#fras8").text("O número de semanas entre as datas: "+dataMenor+" e "+dataMaior+" é: "+semanas.toFixed());
+			})
+
+		});
+		//EXERCÍCIO 9
+		var minusculas = /[a-z]/;
+        var maiusculas = /[A-Z]/;
+        var numeros = /[1-9]/;
+        var simbolos = /[@#!$%&*()-+.,=<>?]/;
+        $(function () {
+
+            $("#botao9").keyup(function () {
+                if ($("#senha9").val() == "") {
+                    $("#fras9").text("");
+                    $("#fras9").css('color', 'black');
+                }
+            })
+
+            $("#botao9").click(function () {
+                let senha9 = $("#senha9").val();
+                let result = "";
+                if ($("#senha9").val() == "") {
+                    $("#fras9").text("Insira uma senha");
+                    $("#fras9").css('color', 'black');
+                }
+                if (minusculas.test(senha9) || maiusculas.test(senha9)) {
+                    $("#fras9").text("Senha Fraca");
+                    $("#fras9").css('color', 'red');
+                }
+                if (minusculas.test(senha9) && maiusculas.test(senha9) && minusculas.test(senha9)) {
+                    $("#fras9").text("Senha Média");
+                    $("#fras9").css('color', 'orange');
+                }
+
+                if (minusculas.test(senha9) && maiusculas.test(senha9) && minusculas.test(senha9) && simbolos.test(senha9)) {
+                    $("#fras9").text("Senha Forte");
+                    $("#fras9").css('color', 'green');
+                }
+            })
+        })
+		
+
+
+	</script>
+
+</head>	
+<style type="text/css">
+	ul{
+		list-style-type: none;
+	}
+	li{
+		display: inline;
+	}
+</style>
+
+	<body>
+		<h1>Laboratório JQuery 2</h1>
+		<ul>
+			<li><a href="#exer1">Exercício 1</a></li>
+			<li><a href="#exer2">Exercício 2</a></li>
+			<li><a href="#exer3">Exercício 3</a></li>
+			<li><a href="#exer4">Exercício 4</a></li>
+			<li><a href="#exer5">Exercício 5</a></li>
+			<li><a href="#exer6">Exercício 6</a></li>
+			<li><a href="#exer7">Exercício 7</a></li>
+			<li><a href="#exer8">Exercício 8</a></li>
+			<li><a href="#exer9">Exercício 9</a></li>
+		</ul>
+		<div id="exer1">
+		<h2>Exercício 1</h2>
+		<p>Escreva uma frase para ser invertida. Exemplo: carro azul / luza orrac.</p>
+		<input type="text" id="frase1" placeholder="Escreva uma frase">
+		<input type="submit" id="botao1"  placeholder="Enviar">
+		<p id="a"></p>
+		<p id="normal"></p>
+		<p id="b"></p>
+		<p id="invertida"></p>
+		</div>
+		<div id="exer2">
+		<h2>Exercício 2</h2>
+		<p>Escreva uma frase para marcar as vogais em negrito.</p>
+		<input type="text" id="frase2" placeholder="Escreva uma frase">
+		<input type="submit" id="botao2"  placeholder="Enviar">
+		<p id="fras2"></p>
+		</div>
+		<div id="exer3">
+		<h2>Exercício 3</h2>
+		<p>Escreva um texto e veja a lista de ocorrência das palavras contidas nele.</p>
+		<input type="text" id="frase3" placeholder="Escreva um texto">
+		<input type="submit" id="botao3"  placeholder="Enviar">
+		<table id="tabela"></table>		
+		</div>
+		<div id="exer4">
+		<h2>Exercício 4</h2>
+		<p>Escreva um texto e veja qual a palavra de maior ocorrência.</p>
+		<input type="text" id="frase4" placeholder="Escreva um texto">
+		<input type="submit" id="botao4"  placeholder="Enviar">
+		<p id="fras4"></p>	
+		<p id="fras41"></p>	
+		</div>
+		<div id="exer5">
+		<h2>Exercício 5</h2>
+		<p>Escreva um texto e o envie.</p>
+		<input type="text" id="frase5" placeholder="Escreva um texto">
+		<input type="submit" id="botao5"  placeholder="Enviar"><br>
+		<p id="normal5"></p>
+		<p id= "texto5"></p>
+		<br><br>
+		<p>A seguir, escolha uma palavra do texto e a substitua pela palavra a sua escolha.</p>
+		<input type="text" id="proc5" placeholder="Procurar">
+		<input type="text" id="subs5" placeholder="Substituir">
+		<input type="submit" id="botao51" name="Substituir" placeholder="Substituir">
+		<p id="substituido"></p>
+		<p id="texto51"></p>
+		</div>
+		<div id="exer6">
+		<h2>Exercício 6</h2>
+		<p>Selecione uma data de nascimento e descubra os dias de vida. </p>
+		<input type="date" id="data6" placeholder="Insira uma data">
+		<input type="submit" id="botao6"  placeholder="Enviar">
+		<p id="fras6"></p>
+		</div>
+		<div id="exer7">
+		<h2>Exercício 7</h2>
+		<p>Selecione uma data e veja ela escrita por extenso.</p>
+		<input type="date" id="data7" placeholder="Insira uma data">
+		<input type="submit" id="botao7"  placeholder="Enviar">
+		<p id="fras7"></p>
+		</div>
+		<div id="exer8">
+		<h2>Exercício 8</h2>
+		<p>Selecione das datas e descubra o intervalos entre elas em quantidade de semanas.</p>
+		<p>Insira no primeiro campo a data mais antiga e no segundo campo a data mais recente.</p>
+		<input type="date" id="dataMenor" placeholder="Insira a data mais antiga">
+		<input type="date" id="dataMaior" placeholder="Insira a data mais recente">
+		<input type="submit" id="botao8"  placeholder="Enviar">
+		<p id="fras8"></p>
+		</div>
+		<div id="exer9">
+		<h2>Exercício 9</h2>
+		<p>Insira uma senha e descubra se ela é fraca, mediana ou forte.</p>
+		<p>Teste sua senha</p>
+		<input type="password" id="senha9" placeholder="Insira sua senha">
+		<input type="submit" id="botao9"  value="Testar">
+		<p id="fras9"></p>
+		</div>
+		<button class="voltar"><a href="./java.html">Voltar</a></button>
+	</body>
+	</html>
