@@ -1,0 +1,21 @@
+<!DOCTYPE css>
+<style>
+html{
+	font-family: 'Raleway', sans-serif; 
+}
+body{
+		margin: 40px;
+		font-family: 'Raleway', sans-serif; 
+		color: white;
+		background-color: #0d001a;
+	}
+	h1, h2, a{
+		color:#751aff;
+		font-family: 'Raleway', sans-serif;
+	}
+	
+	p, button{
+		font-family: 'Raleway', sans-serif;
+	}
+
+</style>

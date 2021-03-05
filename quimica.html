@@ -3,13 +3,44 @@
 <head>
 	<title>Química</title>
 	<meta charset="utf-8">
-	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
 	<link href="style.css" rel="stylesheet">
 </head>
 <style>
-
+	body{
+		background-image: url("background_quimica.png");
+		background-size: 23.5%;
+		background-position: right;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+	#principal{
+		margin-right: 30%;
+	}
+	h1{
+		font-size: 2.5em;
+	}
+	button{
+		background-color: #f2f2f2;
+		color: #0d001a;
+		font-weight: bold;
+		padding: 10px;
+		border: 1px solid #f2f2f2;
+		border-radius: 4px;
+		cursor: pointer;
+		-webkit-transition-duration: 0.4s; /* Safari */
+  		transition-duration: 0.4s;
+	}
+	button:hover{
+		box-shadow: 0 12px 16px 0 rgba(117, 26, 255,0.50),0 17px 50px 0 rgba(117, 26, 255,0.45);
+	}
+	a{
+		text-decoration: none;
+	}
 </style>
 <body>
+	<div id="principal">
 	<h1>Química</h1>
 	<h2>Primeiro Trimestre</h2>
 	<h3>Estequiometria</h3>
@@ -39,13 +70,126 @@
 
 	</div>
 		<h4>Realize aqui os cálculos relacionados às informações acima.</h4>
-	<a href="./simulacao.html">Simuladores</a>
+	<button><a href="./simulacao.html">Simuladores</a></button>
 	
 
 	<h2>Segundo Trimestre</h2>
+		<h3>Gases</h3>
+	<h4>Conceitos Gerais</h4>
+	<p>Os gases são definidos como substâncias que possuem grande capacidade de expansão e compressão, estão em constante movimento e não possuem forma nem volume fixos. É importante lembrar que o volume de um gás é condicionado pelo volume do recipiente que o contém. <br>
+	No estudo físico dos gases, vamos considera-los como sendo gases ideais, ou seja, formados por partículas de tamanhos desprezíveis com interações (entre partículas) também desprezíveis e com choques contra as paredes do recipiente 100% elásticos.</p>
+	<p>Os gases estão ao nosso redor, como por exemplo o <strong>Gás Natural</strong>, uma mistura de derivados de combustíveis fósseis, formado quando camadas de animais, soterrados ficam submetidos a intenso calor e pressão ao longo de milhares de anos, ou da biomassa quando está em decomposição, que é utilizado na produção de energia, como combustível de carros (GNV - Gás Natural Veícular) e no aquecimento de casas.</p>
+	<p>O gás natural é composto por uma mistura de hidrocarbonetos leves (metano (CH<sub>4</sub>), etano (C<sub>2</sub>H<sub>6</sub>), propano (C<sub>3</sub>H<sub>8</sub>), butano (C<sub>4</sub>H<sub>10</sub>) e outros gases em menores proporções) que submetido à temperatura ambiente e pressão atmosférica permanece no estado gasoso. É uma fonte energética encontrada na natureza em duas formas distintas. Ele pode ser obtido em jazidas e através da queima de biomassa (bagaço de cana-de-açúcar).</p>
+	
+	<h4>Variáveis do Estado Gasoso</h4>
+	<p>O comportamento do estado gasoso é descrito por três variáveis: a pressão (P), a temperatura (T) e o volume (V).</p>
+	<h4>Pressão</h4>
+	<p>A pressão é definida como sendo a força aplicada sobre unidade de área.<br>
+	P = F/A
+	<p>Para o sistema internacional (SI), a unidade de pressão é o Pascal (Pa), que equivale a Newton (N) por metro quadrado de área.<br> Curiosidade: Utilizamos muito no estudo dos gases as pressões em milímetro de mercúrio (mmHg) e a atmosfera (atm).</p>
+	
+	<h4>Temperatura</h4>
+	<p>A temperatura está relacionada diretamente com o grau de agitação das partículas. Quanto maior a temperatura, maior será o grau de agitação das mesmas (maior a velocidade média).<br>
+	Obrigatoriamente devemos utilizar a temperatura na escala absoluta Kelvin (K).<br>
+	T(Kelvin) = t(C) + 243</p>
+	
+	<h4>Volume</h4>
+	<p>O volume é uma grandeza tridimensional e é calculada de acordo com o recipiente.<br>
+	Várias unidades de volume são utilizadas, dentre elas podemos citar o mililitro (mL), o litro (L), o metro cúbico (m³), entre outras.
+	Algumas das relações existentes entre as unidades de volume são:</p>
+	<p>1l = 1dm³ <small>equivale</small> 1000ml <i>ou</i> 1000cm³<br> 1m³ <small>equivale</small> 1000L</p>
+	
+	<h4>Transformações Gasosas</h4>
+	<p>Nas transformações gasosas, uma variável é mantida constante enquanto outras duas sofrem variações. Estudaremos as transformações a temperatura constante (isotérmica), a pressão constante (isobárica) e a volume constante (isovolumétrica, isométrica ou isocórica).</p>
+
+	<p><strong><i>Transformação Isotérmica</i></strong><br>
+	Mantendo-se a temperatura constante e variando o volume em relação a pressão, nota-se que pressão e volume são grandezas inversamente proporcionais. Matematicamente, temos:</p>
+	<p>P<sub>1</sub> . V<sub>1</sub> = P<sub>2</sub> . V<sub>2</sub>		(Lei de Boyle)</p>
+
+	<p><strong><i>Transformação Isobárica</i></strong><br>
+	Na transformação isobárica, a pressão é mantida constante enquanto o volume e a temperatura variam. Nota-se neste caso que o aumento da temperatura causa um aumento do volume, ou seja, essas duas grandezas são diretamente proporcionais.</p>
+	<p>V<sub>1</sub> / T<sub>1</sub> = V<sub>2</sub> / T<sub>2</sub>		(Lei de Charles)</p>
+
+	<p><strong><i>Transformação Isovolumétrica, Isométrica ou Isocórica</i></strong><br>
+	Neste caso o volume é mantido constante, variando-se a pressão e a temperatura. O aumento da temperatura leva ao aumento da pressão (grandezas diretamente proporcionais).</p>	
+	<p>P<sub>1</sub> / T<sub>1</sub> = P<sub>2</sub> / T<sub>2</sub>		(Lei de Gay-Lussac)</p>
+
+	<h4>Equação Geral dos Gases</h4>
+	<p>Somando as três equações das transformações gasosas, chegamos à equação geral dos gases:<br>
+		P<sub>1</sub> . V<sub>1</sub> / T<sub>1</sub> = P<sub>2</sub> . V<sub>2</sub> / T<sub>2</sub></p>
+
+	<h4>Gás Ideal</h4>
+	<p>Um gás ideal, do ponto de vista microscópico, é tratado como partículas, sendo que essas não apresentam interações intermoleculares (forças de atração entre as moléculas), além disso, as colisões entre os gases ideais são tratadas como sendo elásticas e as velocidades de deslocamento são altas.<br>
+	Uma observação interessante é que um gás real pode apresentar comportamento ideal quando é submetido a altas temperaturas e baixas pressões.<br>
+	Deste modo conseguimos entender o motivo pelo qual um gás ideal não consegue ser liquefeito: para liquefazer um gás são necessárias baixas temperaturas e altas pressões, comportamento oposto das condições ideais.</p>
+
+	<h4>Volume Molar</h4>
+	<p>O volume molar é o volume ocupado por 1 mol de uma dada substância que se encontra no estado gasoso.<br>
+	Quando 1 mol de qualquer gás está submetido às condições normais de temperatura e pressão (CNTP, TPN ou CN), ou seja, a uma temperatura de 273 K (0°C) e pressão de 1 atm (760 mmHg) esse ocupa um volume de 22,4 L.</p>
+
+	<h4>Estudo da equação de estado dos gases ideais</h4>
+	<p>Quaisquer que sejam as transformações sofridas por uma massa fixa de gás, a relação PV/T apresenta sempre um valor constante que depende do número de mols do gás. Para 1mol de qualquer gás PV/T = R. O valor de R nas CNTP (condições normais de temperatura e
+	pressão) pode então ser calculado:</p>
+	<p><strong>P</strong>ressão = 1 atm = 760 mmHg<br>
+	<strong>T</strong>emperatura = 0 ºC = 273 K<br>
+	<strong>V</strong>olume molar = 22,4 L mol<sup>-1</sup></p>
+	<p>PV/T = R -> 122,4/273 -> R = 0,082 atm.L.mol<sup>-1</sup>.K<sup>-1</sup></p>
+	<p>Genericamente, para um número qualquer de mol (n) temos:<br>
+		PV/T = nR -> PV = nRT (Equação de Clapeyron)</p>
+
+	<h4>Mistura Gasosas</h4>
+	<p>Numa mistura de gases ideais que não reagem entre si, a mistura se comporta como se fosse um gás único e obedece as leis dos gases estudadas.<br>
+		Como é o caso do Gás Natural, ele é composto por principalmente metano (CH<sub>4</sub>), etano (C<sub>2</sub>H<sub>6</sub>), propano (C<sub>3</sub>H<sub>8</sub>), butano (C<sub>4</sub>H<sub>10</sub>) e se comporta como um gás no dia a dia, como podemos perceber quando abastecemos um carro com tanque de gás.</p>
+
+	<h4>Pressão Parcial</h4>
+	<p>A pressão total de um sistema corresponde à soma das pressões exercidas pelos componentes de uma mistura, ou seja:<br>
+	P<sub>total</sub> = P<sub>1</sub> + P<sub>2</sub> + .... + P<sub>n</sub> (Sistema contendo n componentes).<br>
+	Essa relação é conhecida como Lei de Dalton das pressões parciais.</p>
+
+	<h4>Fração Molar</h4>
+	<p>A relação entre o número de mol de um gás e o número total de mol na mistura é conhecida por fração molar.<br>
+		X<sub>A</sub> = N(A)/N(total)<br>
+		Onde:<br>
+		X<sub>A</sub> ............Fração molar de certo gás "A".<br>
+		N (A) .......Número de mols de A no sistema.<br>
+		N(total)....Número de total de mols do sistema.</p>
+	<p>Sendo assim, conseguimos calcular a <i>pressão parcial do nosso gás</i> "A"<br>
+		P<sub>A</sub> = P<sub>total</sub> . X<sub>A</sub></p>
+
+	<h4>Volume Parcial</h4>
+	<p>O volume total de um sistema é a soma dos volumes parciais dos gases que o compõem.<br>
+	<p>Para entender, pense, por exemplo, em um cilindro de combustível com 20 L de gás natural, sendo que seus principais constituintes são o metano, o etano e o propano. Como o metano corresponde a 85% do volume total do gás natural, ele possui 17 L. Já o etano é 10%, ou 2,0 L e o propano corresponde a apenas 5%, que é igual a 1,0 L. Se somarmos os volumes parciais, chegaremos exatamente ao valor do volume total:</p>
+		V<sub>total</sub> = V<sub>metano</sub> + V<sub>etano</sub> + V<sub>propano</sub><br>
+		V<sub>total</sub> = 17 L + 2  L + 1 L<br>
+		V<sub>total</sub> = 20 L</p>
+	<p>O volume parcial de um gás é o volume que ele ocuparia se estivesse sozinho nas mesmas condições de pressão total e temperatura da mistura.<br>
+		V<sub>A</sub> = V<sub>total</sub> . X<sub>A</sub></p>
+
+	<h4>Massa Molar Aparente</h4>
+	<p>A massa total de uma mistura de gases é igual a soma da massa de cada gás, e a quantidade de matéria (números de mols) é igual a soma das quantidades de matéria de cada gás. A massa molar aparente pode então ser calculada pelas seguintes fórmulas:<br>
+		M<sub>aparente</sub> = m<sub>total</sub>/n<sub>total</sub><br>
+		M<sub>aparente</sub> = M<sub>A</sub> . X<sub>A</sub> + M<sub>B</sub> . X<sub>B</sub> + ... + M<sub>Z</sub> . X<sub>Z</sub></p>
+
+	<h4>Densidade de Gases</h4>
+	<p>A densidade é a relação entre a massa de uma dada substância pelo volume ocupado.<br>
+	Utilizando a equação de Clapeyron chegamos facilmente na equação da densidade de gases.<br>
+	d = P . M / R . T</p>
+	<p>E a Densidade Aparente (densidade de uma mistura gasosa) pode ser calculada da seguinte forma:<br>
+	d<sub>aparente</sub> = P . M<sub>aparente</sub> / R . T</p> </p>
+
+	<h4>Difusão e Efusão</h4>
+	<p><strong>Efusão</strong> é capacidade de um gás passar através de um orifício.<br>
+		<strong>Difusão</strong> é capacidade de espalhamento de um gás.</p>
+
+	<p>A velocidade de efusão e difusão é explicada pela lei de Graham: a velocidade de efusão/ difusão é inversamente proporcional à raiz quadrada da densidade de um gás.<br>
+	Vale notar que a densidade de um gás é diretamente proporcional a sua massa molecular, ou seja, quanto mais “leve” é um gás, maior serão suas velocidades de difusão e efusão.</p>
+
+	<h3>Acesse por aqui exercícios sobre Gases para treinar!</h3>
+	<button href="./gases.html">Exercícios</button>
 
 	<h2>Terceiro Trimestre</h2>
 
-	<a href="./index.html">Voltar</a>
+	<button><a href="./index.html">Voltar</a></button>
+</div>
 </body>
 </html>

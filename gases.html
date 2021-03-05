@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercícios sobre Gases</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">	
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+</head>
+<script type="text/javascript">
+ 	 function letraValor(){
+  		let radio = document.getElementsByName('opcao');
+  		for(let i = 0; i < radio.length; i++){
+  		 if(radio[i].checked){
+    		return radio[i].value;
+   		}
+ 	} 
+  	return null;
+ 	}
+  	function exer1(){
+ 		
+ 		let letra = letraValor();
+ 		if( letra == 'a1'){
+ 			let texto = "Resposta certa!";
+ 			document.getElementById("certo1").innerHTML = texto;
+ 			document.getElementById("errado1").innerHTML = '';
+ 			document.getElementById("resp1").innerHTML = "Aplicando a equação de estado para um gás ideal, vem:<br>R = 62,3 mmHg . L / K . mol = 62,3 mmHg . L .K<sup>-1</sup> . mol<sup>-1</sup> <br><br>V = 50L<br>m = 2,5 mol<br>P = 1246 mmHg<br>P x T = n x R x T<br><br>T = 1246 mmHg x 50L/ 2.5mol x 62,3mmHg . L .K<sup>-1</sup> . mol<sup>-1</sup><br>T = 400K";
+ 		}
+ 		else{
+ 			let texto = "Resposta errada!";
+ 			document.getElementById("errado1").innerHTML = texto;
+ 			document.getElementById("certo1").innerHTML = '';
+ 			document.getElementById("resp1").innerHTML = "Resposta certa: 400K<br><br>Aplicando a equação de estado para um gás ideal, vem:<br>R = 62,3 mmHg . L / K . mol = 62,3 mmHg . L .K<sup>-1</sup> . mol<sup>-1</sup> <br><br>V = 50L<br>m = 2,5 mol<br>P = 1246 mmHg<br>P x T = n x R x T<br><br>T = 1246 mmHg x 50L/ 2.5mol x 62,3mmHg . L .K<sup>-1</sup> . mol<sup>-1</sup><br>T = 400K";
+ 		}
+ 	}
+ 	function exer2(){
+ 		
+ 		let letra = letraValor();
+ 		if( letra == 'c2'){
+ 			let texto = "Resposta certa!";
+ 			document.getElementById("certo2").innerHTML = texto;
+ 			document.getElementById("errado2").innerHTML = '';
+ 			document.getElementById("resp2").innerHTML = "P . V = n . R . T<br>P . V = (m/M) . R . T<br>P . M = d . R . T<br>d = (P . M) / (R . T) = (32 . 1) / (0,082 . 273) = 1,43 g . L<sup>-1</sup>";
+ 		}
+ 		else{
+ 			let texto = "Resposta errada!";
+ 			document.getElementById("errado2").innerHTML = texto;
+ 			document.getElementById("certo2").innerHTML = '';
+ 			document.getElementById("resp2").innerHTML = "Resposta certa: 1,4<br><br>P . V = n . R . T<br>P . V = (m/M) . R . T<br>P . M = d . R . T<br>d = (P . M) / (R . T) = (32 . 1) / (0,082 . 273) = 1,43 g . L<sup>-1</sup>";
+ 		}
+ 	}
+  	function exer3(){
+ 		
+ 		let letra = letraValor();
+ 		if( letra == 'd3'){
+ 			let texto = "Resposta certa!";
+ 			document.getElementById("certo3").innerHTML = texto;
+ 			document.getElementById("errado3").innerHTML = '';
+ 			document.getElementById("resp3").innerHTML ="1 crédito equivale a 1 tonelada 6 (10<sup>6</sup> g) de CO<sub>2</sub>, então:<br><br>P x V = (m/M) x R x T<br>1,00 x V = (10<sup>6</sup> / 44) x 0,082 x 300<br>V = 0,599 x 10<sup>6</sup>L<br>V = 599 x 10<sup>3</sup>L = 599m<sup>3</sup> ~ 600m<sup>3</sup>";
+ 		}
+ 		else{
+ 			let texto = "Resposta errada!";
+ 			document.getElementById("errado3").innerHTML = texto;
+ 			document.getElementById("certo3").innerHTML = '';
+ 			document.getElementById("resp3").innerHTML ="Resposta certa: 600m<sup>3</sup><br><br>1 crédito equivale a 1 tonelada 6 (10<sup>6</sup> g) de CO<sub>2</sub>, então:<br><br>P x V = (m/M) x R x T<br>1,00 x V = (10<sup>6</sup> / 44) x 0,082 x 300<br>V = 0,599 x 10<sup>6</sup>L<br>V = 599 x 10<sup>3</sup>L = 599m<sup>3</sup> ~ 600m<sup>3</sup>";
+ 		}
+ 	}  	
+ 	function exer4(){
+ 		
+ 		let letra = letraValor();
+ 		if( letra == 'd4'){
+ 			let texto = "Resposta certa!";
+ 			document.getElementById("certo4").innerHTML = texto;
+ 			document.getElementById("errado4").innerHTML = '';
+ 			document.getElementById("resp4").innerHTML ="Análise das anotações:<br><br>I. Anotação incorreta. As massas são diferentes.<br>De acordo com o princípio de Avogadro, nas mesmas condições de temperatura e pressão o mesmo volume de um gás possui o mesmo número de moléculas.<br><br>II. Anotação correta. Comportam-se como gases ideais, ou seja, o volume das moléculas e a atração intermolecular são desprezíveis e os choques são considerados perfeitamente elásticos.<br><br>III. Anotação incorreta. A molécula de hidrogênio tem dois átomos e o argônio é monoatômico.<br><br>IV. Anotação correta. Têm o mesmo número de mols, de acordo com a hipótese de Avogadro.";
+ 		}
+ 		else{
+ 			let texto = "Resposta errada!";
+ 			document.getElementById("errado4").innerHTML = texto;
+ 			document.getElementById("certo4").innerHTML = '';
+ 			document.getElementById("resp4").innerHTML ="Resposta certa: II e IV<br><br>Análise das anotações:<br><br>I. Anotação incorreta. As massas são diferentes.<br>De acordo com o princípio de Avogadro, nas mesmas condições de temperatura e pressão o mesmo volume de um gás possui o mesmo número de moléculas.<br><br>II. Anotação correta. Comportam-se como gases ideais, ou seja, o volume das moléculas e a atração intermolecular são desprezíveis e os choques são considerados perfeitamente elásticos.<br><br>III. Anotação incorreta. A molécula de hidrogênio tem dois átomos e o argônio é monoatômico.<br><br>IV. Anotação correta. Têm o mesmo número de mols, de acordo com a hipótese de Avogadro.";
+ 		}
+ 	}
+ 	function exer5(){
+ 		
+ 		let letra = letraValor();
+ 		if( letra == 'b5'){
+ 			let texto = "Resposta certa!";
+ 			document.getElementById("certo5").innerHTML = texto;
+ 			document.getElementById("errado5").innerHTML = '';
+ 			document.getElementById("resp5").innerHTML ="Da equação de estado de um gás, vem:<br><br>P . V = (m / M) . R . T<br>V = (m . R . T) / (P . M) => V = (170 x 0,082 x 300) / (150 x 4) = 6,97L ~ 7L";
+ 		}
+ 		else{
+ 			let texto = "Resposta errada!";
+ 			document.getElementById("errado5").innerHTML = texto;
+ 			document.getElementById("certo5").innerHTML = '';
+ 			document.getElementById("resp5").innerHTML ="Resposta certa: 7,0L<br><br>Da equação de estado de um gás, vem:<br><br>P . V = (m / M) . R . T<br>V = (m . R . T) / (P . M) => V = (170 x 0,082 x 300) / (150 x 4) = 6,97L ~ 7L";
+ 		}
+ 	}
+ 	
+</script>
+<style type="text/css">
+	body{
+		background-image: url("background_quimica.png");
+		background-size: 23.5%;
+		background-position: right;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+	.certo{
+		color: green;
+	}
+	.errado{
+		color:red;
+	}
+	button{
+		background-color: #f2f2f2;
+		color: #0d001a;
+		font-weight: bold;
+		padding: 10px;
+		border: 1px solid #f2f2f2;
+		border-radius: 4px;
+		cursor: pointer;
+		-webkit-transition-duration: 0.4s; /* Safari */
+  		transition-duration: 0.4s;
+	}
+	button:hover{
+		box-shadow: 0 12px 16px 0 rgba(117, 26, 255,0.50),0 17px 50px 0 rgba(117, 26, 255,0.45);
+	}
+	input{
+		cursor: pointer;
+	}
+	#exer1, #exer2, #exer3, #exer4, #exer5{
+		margin-right: 30%;
+	} 
+	a{
+		text-decoration: none;
+	}
+	h1{
+		font-size: 2.5em;
+	}
+</style>
+<body>
+	<h1>Exercícios sobre gases</h1> 
+	<div id="exer1">
+	<p>1. Gases ideais são aqueles nos quais as interações entre átomos, íons ou moléculas em suas constituições
+	são desprezadas e esse comportamento se intensifica em pressões baixas. Na descrição desses gases
+	a equação de estado para gases perfeitos é a mais adequada. Considere uma quantidade de matéria
+	de 2,5mols de um gás de comportamento ideal que ocupa um volume de 50 L à pressão de
+	1.246mmHg. A temperatura desse gás nas condições citadas será de:<br>
+	Dado: R = 62,3 mmHg . L / K . mol</p>
+	<input type="radio" name="opcao" value="a1" id="a">400 K <br>
+    <input type="radio" name="opcao" value="b1" id="b">127 K <br>
+    <input type="radio" name="opcao" value="c1" id="c">273 K <br>
+    <input type="radio" name="opcao" value="d1" id="d">200 K <br>
+	<input type="radio" name="opcao" value="e1" id="e">254 K <br><br>
+	<button onclick="exer1()" value="Gabarito" >Gabarito</button>
+    <p id="certo1" class="certo"></p><p id="errado1" class="errado"></p>
+    <p id="resp1"></p>
+    </div>
+    <div id="exer2">
+	<p>2. Assumindo que uma amostra de gás oxigênio puro, encerrada em um frasco, se comporta idealmente, o valor mais próximo da densidade, em gL<sup>-1</sup> , desse gás a 273 K 	e 1,0 atm é:<br>
+	Considere: R = 0,082 atm L mol<sup>-1</sup> K<sup>-1</sup><br>
+				M(O<sub>2</sub>) = 32 g mol<sup>-1</sup></p>
+	
+	<input type="radio" name="opcao" value="a2" id="a2">1,0<br>
+	<input type="radio" name="opcao" value="b2" id="b2">1,2<br>
+	<input type="radio" name="opcao" value="c2" id="c2">1,4<br>
+	<input type="radio" name="opcao" value="d2" id="d2">1,6<br>
+	<input type="radio" name="opcao" value="e2" id="e2">1,8<br><br>
+	<button onclick="exer2()">Gabarito</button>	
+	<p id="certo2" class="certo"></p><p id="errado2" class="errado"></p>
+	<p id="resp2"></p>
+	</div>
+	<div id="exer3">
+	<p>3. Créditos de carbono são certificações dadas a empresas, indústrias e países que conseguem reduzir a
+	emissão de gases poluentes na atmosfera. Cada toneladrradoa de CO2 não emitida ou retirada da atmosfera
+	equivale a um crédito de carbono.<br>
+	<p class="direita">(http://www.brasil.gov.br/meio-ambiente/2012/04/credito-carbono. Adaptado)</p>
+	Utilizando-se R = 0,082 atm . L . mol<sup>-1</sup> . K<sup>-1</sup>, a quantidade de CO<sub>2</sub> equivalente a 1 (um) crédito de
+	carbono, quando coletado a 1,00 atm e 300 K, ocupa um volume aproximado, em m<sup>3</sup>, igual a<br>
+	Dados: C = 12; O = 16.
+	</p>
+	<input type="radio" name="opcao" value="a3" id="a3">100<br>
+	<input type="radio" name="opcao" value="b3" id="b3">200<br>
+	<input type="radio" name="opcao" value="c3" id="c3">400<br>
+	<input type="radio" name="opcao" value="d3" id="d3">600<br>
+	<input type="radio" name="opcao" value="e3" id="e3">800<br><br>
+	<button onclick="exer3()" value="Gabarito" >Gabarito</button>
+	<p id="certo3" class="certo"></p><p id="errado3" class="errado"></p>
+	<p id="resp3"></p>
+    </div>
+    <div id="exer4">
+	<p>4. Enquanto estudava a natureza e as propriedades dos gases, um estudante anotou em seu caderno as
+	seguintes observações sobre o comportamento de 1 litro de hidrogênio e 1 litro de argônio,
+	armazenados na forma gasosa à mesma temperatura e pressão:<br>
+	I. Têm a mesma massa.<br>
+	II. Comportam-se como gases ideais.<br>
+	III. Têm o mesmo número de átomos.<br>
+	IV. Têm o mesmo número de mols.<br>
+	É correto o que o estudante anotou em</p>
+	<input type="radio" name="opcao" value="a4" id="a4">I, II, III e IV<br>
+	<input type="radio" name="opcao" value="b4" id="b4">I e II<br>
+	<input type="radio" name="opcao" value="c4" id="c4">II e III<br>
+	<input type="radio" name="opcao" value="d4" id="d4">II e IV<br>
+	<input type="radio" name="opcao" value="e4" id="e4">III e IV<br><br>
+	<button onclick="exer4()" value="Gabarito" >Gabarito</button>
+	<p id="certo4" class="certo"></p><p id="errado4" class="errado"></p>
+	<p id="resp4"></p>
+	</div>
+	<div id="exer5">
+	<p>5. O gás hélio é utilizado para encher balões e bexigas utilizados em eventos comemorativos e em festas infantis. Esse gás pode ser comercializado em cilindros cujo conteúdo apresenta pressão de 150 bar a 300 K. Considerando-se que 1 atm = 1 bar, e que a massa de gás He no cilindro é 170 g, então, o valor que mais se aproxima do volume de gás hélio contido naquele cilindro a 300 K é:<br>
+	Dado: R = 0,082 atm L mol<sup>-1</sup> K<sup>-1</sup></p>
+	<input type="radio" name="opcao" value="a5" id="a5">14 L<br>
+	<input type="radio" name="opcao" value="b5" id="b5">7,0 L<br>
+	<input type="radio" name="opcao" value="c5" id="c5">1,0 L<br>
+	<input type="radio" name="opcao" value="d5" id="d5">500 mL<br>
+	<input type="radio" name="opcao" value="e5" id="e5">140 mL<br><br>
+	<button onclick="exer5()" value="Gabarito" >Gabarito</button>
+	<p id="certo5" class="certo"></p><p id="errado5" class="errado"></p>
+	<p id="resp5"></p>
+	</div><br>
+	<button><a href="./quimica.html">Voltar para a página principal</a></button>	
+</body>
+</html>
