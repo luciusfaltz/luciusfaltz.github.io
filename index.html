@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>JavaScript</title>
+	<title>Programação Clientes Web</title>
 	<meta charset="utf-8">
-	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
 	<link href="style.css" rel="stylesheet">
 </head>
 <style>
@@ -11,22 +12,40 @@
   		width:48%;
   		float: left;
   		padding: 50px;
- 		border: 1px solid red;
+ 		border: 5px solid #751aff;
+ 		border-radius: 15px;
   		box-sizing: border-box;
   		margin: 1%;
   	}
 	.disciplina {
   		width: 48%;
   		float: right;
+  		text-align: center;
   		padding: 50px;
- 		border: 1px solid red;
+ 		border: 5px solid #751aff;
+ 		border-radius: 15px;
   		box-sizing: border-box;
   		margin: 1%;
+  		cursor: pointer;
+		-webkit-transition-duration: 0.4s; /* Safari */
+  		transition-duration: 0.4s;
 
 		}
+	.disciplina:hover{
+		box-shadow: 0 12px 16px 0 rgba(117, 26, 255,0.50),0 17px 50px 0 rgba(117, 26, 255,0.45);
+	}
+	a{
+		font-size: 5em;
+		text-decoration: none;
+		padding: 60px;
+
+		}
+	h1{
+		font-size: 5em;
+	}
 </style>
 <body>
-	<h1>Programação Clientes Web</h1>
+	
 	<div class="curriculo">
 	<h1>Currículo</h1>
 	<h2>Nome: Lucius Faltz Lassarote da Silva</h2>
@@ -49,9 +68,9 @@
 		<li>Inglês - Básico</li>		
 	</ul>
 	</div>
-	<button class="disciplina">
+	<div class="disciplina">
 		<a href="./java.html">JavaScript</a>
-	</button>
+	</div>
 	<div class="disciplina">
 		<a href="./quimica.html">Química</a>
 	</div>
