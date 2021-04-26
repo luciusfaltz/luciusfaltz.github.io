@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Molaridade de soluções</title>
+	<meta charset="utf-8">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+</head>
+<style type="text/css">
+	body{
+		text-align: center;
+		background-image: url("background_quimica.png");
+		background-size: 23.5%;
+		background-position: right;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+	div{
+		margin-right: 30%;
+	}
+	input{
+		font-size: 1em;
+		font-family: Raleway, 'sans-serif';
+	}
+</style>
+<script type="text/javascript">
+	function simulacao(){
+		let agua = parseFloat(document.getElementById("h2o").value);
+		let bicarbonato = parseFloat(document.getElementById("bicarbonato").value);
+		let mm = 84.007;
+		let molaridade = bicarbonato / (mm * agua);
+		molaridade = molaridade.toFixed(3);
+		let resultado = "A molaridade da solução formada com "+agua+"mL de H<sub>2</sub>O e "+bicarbonato+"g de Bicarbonato de Sódio é "+molaridade+"<br> Informação: Massa Molar do NaHCO<sub>3</sub>: "+mm+"<br>Utilizando a fórmula M = m<sub>1</sub> / (MM<sub>1</sub> x V) nós temos:<br><br> M = "+bicarbonato+" / "+mm+" x "+agua+"<br>M = "+bicarbonato+" / "+mm * agua+"<br>M = "+molaridade+"<br>Ou seja, existem "+molaridade+"mol(s) de NaHCO<sub>3</sub> existente em 1 litro de H<sub>2</sub>O.";
+		document.getElementById("resultado").innerHTML = resultado;
+	}
+</script>
+<body>
+	<div>
+		<h1>Molaridade de soluções</h1>
+		<h3>Calcular a molaridade(M) de uma solução formada entre água [H<sub>2</sub>O] (solvente) e pelo bicarbonato de sódio [NaHCO<sub>3</sub>] (soluto).</h3>
+		<p>Insira um valor para o volume de Água (H<sub>2</sub>O) em Litros:</p>
+		<input type="text" id="h2o" size="25px" placeholder="Volume em Litros">
+		<p>Insira um valor para a quantidade de Bicarbonato de Sódio ([NaHCO<sub>3</sub>]) em gramas:</p>
+		<input type="text" id="bicarbonato" size="25px" placeholder="Quantidade em gramas"><br><br>
+		<button onclick="simulacao()">Calcular molaridade</button>
+		<p id="resultado"></p>
+
+		<a href="quimica.html#solucoes"><button>Voltar</button></a>
+	</div>
+
+</body>
+</html>

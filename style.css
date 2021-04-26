@@ -14,8 +14,26 @@ body{
 		font-family: 'Raleway', sans-serif;
 	}
 	
-	p, button{
+	p, button, li{
 		font-family: 'Raleway', sans-serif;
+		color: white;
+	}
+	button{
+		background-color: #f2f2f2;
+		color: #0d001a;
+		font-weight: bold;
+		padding: 10px;
+		border: 1px solid #f2f2f2;
+		border-radius: 4px;
+		cursor: pointer;
+		-webkit-transition-duration: 0.4s; /* Safari */
+  		transition-duration: 0.4s;
+	}
+	button:hover{
+		box-shadow: 0 12px 16px 0 rgba(117, 26, 255,0.50),0 17px 50px 0 rgba(117, 26, 255,0.45);
+	}
+	a{
+		text-decoration: none;
 	}
 
 </style>

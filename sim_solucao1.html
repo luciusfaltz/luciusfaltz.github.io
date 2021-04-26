@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Classificação de soluções</title>
+	<meta charset="utf-8">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+</head>
+<style type="text/css">
+	body{
+		text-align: center;
+		background-image: url("background_quimica.png");
+		background-size: 23.5%;
+		background-position: right;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+	div{
+		margin-right: 30%;
+	}
+	input{
+		font-size: 1em;
+		font-family: Raleway, 'sans-serif';
+	}
+</style>
+<script type="text/javascript">
+	function simulacao(){
+		let agua = parseFloat(document.getElementById("h2o").value);
+		let bicarbonato = parseFloat(document.getElementById("bicarbonato").value);
+
+		const coef = 7.8;
+		//7.8g/100ml água (18°C)
+
+		// 7.8g ----- 100ml
+		// soluto -------- agua
+		let qtdsoluto = (coef * agua) / 100;
+		//qtdsoluto = qtdsoluto.toFixed(2);
+
+		if( qtdsoluto > bicarbonato){
+			// insaturada
+			let resultado = "A solução formada com "+agua+"mL de H<sub>2</sub>O e "+bicarbonato+"g de Bicarbonato de Sódio é insaturada. <br><br> O coeficiente de solubilidade do NaHCO<sub>3</sub> é igual a 7,8g por 100mL de água.<br> Portanto, ao realizarmos uma regra de três nós temos:<br> Quantidade de soluto para "+agua+"mL de água = (7,8 x "+agua+")/ 100<br> Quantidade de soluto para "+agua+"mL de água = "+coef*agua+" / 100<br> Quantidade de soluto para "+agua+"mL de água = "+qtdsoluto+"<br><br>Sendo assim, a solução se torna insaturada pois "+qtdsoluto+" > "+bicarbonato+".";
+			document.getElementById("resultado").innerHTML = resultado;
+		}
+		else if( qtdsoluto < bicarbonato){
+			//supersaturada
+			let corpoFundo = bicarbonato - qtdsoluto;
+			let resultado = "A solução formada com "+agua+"mL de H<sub>2</sub>O e "+bicarbonato+"g de Bicarbonato de Sódio é supersaturada. <br><br> O coeficiente de solubilidade do NaHCO<sub>3</sub> é igual a 7,8g por 100mL de água.<br> Portanto, ao realizarmos uma regra de três nós temos:<br> Quantidade de soluto para "+agua+"mL de água = (7,8 x "+agua+")/ 100<br> Quantidade de soluto para "+agua+"mL de água = "+coef*agua+" / 100<br> Quantidade de soluto para "+agua+"mL de água = "+qtdsoluto+"<br><br>Sendo assim, a solução se torna supersaturada pois "+qtdsoluto+" < "+bicarbonato+".<br>Pode se formar um corpo de fundo de "+corpoFundo.toFixed(2)+"g de NaHCO<sub>3</sub>";
+			document.getElementById("resultado").innerHTML = resultado;
+		}
+		else{
+			let resultado = "A solução formada com "+agua+"mL de H<sub>2</sub>O e "+bicarbonato+"g de Bicarbonato de Sódio é saturada. <br><br> O coeficiente de solubilidade do NaHCO<sub>3</sub> é igual a 7,8g por 100mL de água.<br> Portanto, ao realizarmos uma regra de três nós temos:<br> Quantidade de soluto para "+agua+"mL de água = (7,8 x "+agua+")/ 100<br> Quantidade de soluto para "+agua+"mL de água = "+coef*agua+" / 100<br> Quantidade de soluto para "+agua+"mL de água = "+qtdsoluto+"<br><br>Sendo assim, a solução se torna saturada pois "+qtdsoluto+" = "+bicarbonato+".";
+			document.getElementById("resultado").innerHTML = resultado;
+		}
+
+	}
+</script>
+<body>
+	<div>
+		<h1>Classificação de soluções</h1>
+		<h3>Classificação de uma solução formada entre água [H<sub>2</sub>O] (solvente) e pelo bicarbonato de sódio [NaHCO<sub>3</sub>] (soluto) a 18°C</h3>
+		<p>Insira um valor para o volume de Água (H<sub>2</sub>O) em Mililitros:</p>
+		<input type="text" id="h2o" size="25px" placeholder="Volume em Mililitros">
+		<p>Insira um valor para a quantidade de Bicarbonato de Sódio ([NaHCO<sub>3</sub>]) em gramas:</p>
+		<input type="text" id="bicarbonato" size="25px" placeholder="Quantidade em gramas"><br><br>
+		<button onclick="simulacao()">Classificar solução</button>
+		<p id="resultado"></p>
+		<a href="quimica.html#solucoes"><button>Voltar</button></a>
+	</div>
+
+</body>
+</html>
