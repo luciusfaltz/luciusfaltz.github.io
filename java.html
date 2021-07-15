@@ -3,39 +3,111 @@
 <head>
 	<title>JavaScript</title>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
 	<link href="style.css" rel="stylesheet">
 </head>
 <style>
+h1{
+	font-size: 4em;
+}
+h2{
+	font-size: 2.5em
+}
+h3{
+	font-size: 1.5em;
+}
+@media (min-width: 768px) and (max-width: 991px){
+	body{
+		 text-align: center;
+		 margin: 0px;
+	}
+	.exercicio{
+		width: 47%;
+		padding: 25px;
+		margin-bottom: 5%;
+	}
+	h1{
+		font-size: 3em;
+	}
+	h2{
+		font-size: 2em;
+	}
+	h3, button, a{
+		font-size: 1.2em;
+	}
 
+}
+@media (max-width: 767px){
+	body{
+		 text-align: center;
+	}
+	.exercicio{
+		width: 97%;
+		padding: 25px;
+		margin-bottom: 5%;
+	}
+	.tri{
+		width: 100%;
+	}
+	h1{
+		font-size: 3em;
+	}
+	h2{
+		font-size: 2em;
+	}
+	h3{
+		font-size: 1.5em;
+	}
+	button, a{
+		font-size: 1.2em;
+	}
+}
 </style>
 <body>
 	<h1>JavaScript</h1>
-	<h2>Primeiro Trimestre</h2>
-	<h3>Exercícios dia 25/10</h3>
-	<a href="./exercicio25_10.html"><button>Exercícios</button></a>
-
-	<h3>Desafio 01 RocketSeat</h3>
-	<a href="./desafio_1_rocketseat.html"><button>Exercícios</button></a>
-	<h3>Desafio 02 RocketSeat</h3>
-	<a href="./desafio_2_rocketseat.html"><button>Exercícios</button></a>
-
-	<h2>Segundo Trimestre</h2>
-	<h3>Exercícios do dia 12/01</h3>
-	<a href="./exercicio1_12-01.html"><button>Exercício 1</button></a>
-	<a href="./exercicio2_12-01.html"><button>Exercício 2</button></a>
-
-	<h3>Catálogo de Filmes com JQUERY</h3>
-	<a href="./filmes/index.html"><button>L.A.FLIX</button></a>
-
-	<h2>Terceiro Trimestre</h2>
-	<h3>Exercícios do dia 02/05</h3>
-	<a href="exercicios02_05.html"><button>Exercícios</button></a>
-	<h3>Exercícios do dia 16/05</h3>
-	<a href="exercicios16_05.html"><button>Exercícios</button></a>
-
-
-	<br><br><a href="./index.html"><button>Voltar</button></a>
+	<section class="tri">
+		<h2>Primeiro Trimestre</h2>
+		<section class='exercicio'>
+			<h3>Exercícios dia 25/10</h3>
+			<a href="./exercicio25_10.html"><button>Exercícios</button></a>
+		</section>
+		<section class='exercicio'>
+			<h3>Desafio 01 RocketSeat</h3>
+			<a href="./desafio_1_rocketseat.html"><button>Exercícios</button></a>
+		</section>
+		<section class='exercicio'>
+			<h3>Desafio 02 RocketSeat</h3>
+			<a href="./desafio_2_rocketseat.html"><button>Exercícios</button></a>
+		</section>
+	</section>
+	<section class="tri">
+		<h2>Segundo Trimestre</h2>
+		<section class='exercicio'>
+			<h3>Exercícios do dia 12/01</h3>
+			<a href="./exercicio1_12-01.html"><button>Exercício 1</button></a>
+			<a href="./exercicio2_12-01.html"><button>Exercício 2</button></a>
+		</section>
+		<section class='exercicio'>
+			<h3>Catálogo de Filmes</h3>
+			<a href="./filmes/index.html"><button>L.A.FLIX</button></a>
+		</section>
+	</section>
+	<section class="tri">
+		<h2>Terceiro Trimestre</h2>
+		<section class='exercicio'>
+			<h3>Exercícios do dia 02/05</h3>
+			<a href="exercicios02_05.html"><button>Exercícios</button></a>
+		</section>
+		<section class='exercicio'>
+			<h3>Exercícios do dia 16/05</h3>
+			<a href="exercicios16_05.html"><button>Exercícios</button></a>
+		</section>
+	</section>
+	<section class="tri">
+		<a class="voltar" href="./index.html"><button class="voltar">Voltar</button></a>
+	</section>
 </body>
 </html>

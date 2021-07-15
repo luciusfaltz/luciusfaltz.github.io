@@ -3,71 +3,67 @@
 <head>
 	<title>Programação Clientes Web</title>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
 	<link href="style.css" rel="stylesheet">
 </head>
 <style>
-	.curriculo {
-  		width:48%;
-  		float: left;
-  		padding: 50px;
- 		border: 5px solid #751aff;
- 		border-radius: 15px;
-  		box-sizing: border-box;
-  		margin: 1%;
-  	}
-	.disciplina {
+	body{
+		margin: 0px;
+		
+	}
+	.bloco {
   		width: 48%;
-  		float: right;
+		float: left;
   		text-align: center;
   		padding: 50px;
- 		border: 5px solid #751aff;
- 		border-radius: 15px;
+		background-color: #1a0133;
+ 		border-radius: 5px;
   		box-sizing: border-box;
   		margin: 1%;
   		cursor: pointer;
-		-webkit-transition-duration: 0.4s; /* Safari */
+		-webkit-transition-duration: 0.4s; 
   		transition-duration: 0.4s;
 		}
-	.disciplina:hover{
+	.bloco:hover{
 		box-shadow: 0 12px 16px 0 rgba(117, 26, 255,0.50),0 17px 50px 0 rgba(117, 26, 255,0.45);
 	}
+	.curriculo{
+		width: 98%;
+	}
 	a{
-		font-size: 5em;
-		text-decoration: none;
-		}
+		font-size: 4em;
+	}
 	h1{
 		font-size: 5em;
+		text-align: center;
 	}
+	@media (min-width: 768px) and (max-width: 991px){
+
+	}
+	@media (max-width: 767px){
+	body{
+		margin: 3%;
+	}
+	.bloco{
+		width: 97%;
+		padding: 25px;
+	}
+	h1{
+		font-size: 4em;
+	}
+	a{
+		font-size: 3em;
+	}
+}
 </style>
 <body>
-	
-	<div class="curriculo">
-	<h1>Currículo</h1>
-	<h2>Nome: Lucius Faltz Lassarote da Silva</h2>
-	<p>Cargo: Estudante</p>
-	<p>Data de Nascimento: 04/10/2003</p>
-	<h2>Contato</h2>
-	<p>E-mail Institucional: lucius.silva@aluno-cefet.br</p>
-	<h2>Experiência Profissional</h2>
-	<h3>Monitor de Design Web</h3>
-	<ul start="square">
-		<li>Março 2020 - Dezembro de 2020</li>		
-	</ul>
-	<h2>Formação</h2>
-	<ul start="square">
-		<li>Ensino Fundamental completo no Colégio Estadual José Martins da Costa</li>
-		<li>Cursando o 2° ano do Ensino Médio com Técnico em Informática integrado no Centro Federal de Educação Tecnológica Celso Suckow da Fonseca UNED Nova Friburgo</li>		
-	</ul>
-	<h2>Idiomas</h2>
-	<ul start="square">
-		<li>Inglês - Básico</li>		
-	</ul>
-	</div>
-	
-	<a href="./java.html"><div class="disciplina">JavaScript</div></a>
-	<a href="./quimica.html"><div class="disciplina">Química</div></a>
+	<h1>Lucius Faltz</h1>
+	<a href="./curriculo.html"><section class="bloco curriculo">Currículo</section></a>
+	<a href="./java.html"><section class="bloco">JavaScript</section></a>
+	<a href="./quimica.html"><section class="bloco">Química</section></a>
 
 </body>
 </html>

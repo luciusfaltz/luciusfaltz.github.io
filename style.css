@@ -1,32 +1,27 @@
-<!DOCTYPE css>
-<style>
-html{
-	font-family: 'Raleway', sans-serif; 
-}
-body{
+	*{
+	font-family: 'Raleway', sans-serif;
+	}
+	body{
 		margin: 40px;
-		font-family: 'Raleway', sans-serif; 
 		color: white;
 		background-color: #0d001a;
 	}
 	h1, h2, a{
 		color:#751aff;
-		font-family: 'Raleway', sans-serif;
 	}
 	
-	p, button, li{
-		font-family: 'Raleway', sans-serif;
+	p, li{
 		color: white;
 	}
 	button{
 		background-color: #f2f2f2;
 		color: #0d001a;
 		font-weight: bold;
-		padding: 10px;
+		padding: 10px; 
 		border: 1px solid #f2f2f2;
 		border-radius: 4px;
 		cursor: pointer;
-		-webkit-transition-duration: 0.4s; /* Safari */
+		-webkit-transition-duration: 0.4s; 
   		transition-duration: 0.4s;
 	}
 	button:hover{
@@ -35,5 +30,22 @@ body{
 	a{
 		text-decoration: none;
 	}
+	.tri{
+		width: 100%;
+		clear:both;
+	}
+	.voltar{
+		float: left;
+	}
+	.exercicio{
+		width: 31%;
+		float: left;
+  		text-align: center;
+  		padding: 20px;
+		background-color: #1a0133;
+ 		border-radius: 5px;
+  		box-sizing: border-box;
+  		margin: 1%;
+	}
 
-</style>
+	
